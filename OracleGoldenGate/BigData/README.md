@@ -1,30 +1,30 @@
 Oracle GoldenGate for Oracle on Docker
 ===============
-Sample Docker build files to facilitate installation, configuration, and environment setup for DevOps users. 
+Sample Docker build files to facilitate installation, configuration, and environment setup for DevOps users.
 
 For more information about Oracle Database 12c for BigData, please see the Oracle Database Online Documentaion at http://docs.oracle.com/goldengate/bd1221/gg-bd/index.html.
 
-## How to build Oracle GoldenGate for Oracle on Docker
+## How to build Oracle GoldenGate for BigData on Docker
 This project offers sample Dockerfile and other associated file for this build:
  * 123010_ggs_Adapters_Linux_x64.zip (Oracle GoldenGate 12c for BigData (12.3.0.1))
  * Dockerfile - Build file for Docker image
- * entrypoint.sh - steps required to install Oracle Database 12c and Oracle GoldenGate 12c
+ * entrypoint.sh - steps required to install Oracle GoldenGate 12c
 
-To rebuild the Oracle GoldenGate for Oracle Docker image, use the following command:
+To rebuild the Oracle GoldenGate for BigData Docker image, use the following command:
 
 	docker build -t oggbigdata:12.3.0.1.0 -f Dockerfile .
- 
-## Running Oracle GoldenGate for Oracle in a Docker container
+
+## Running Oracle GoldenGate for BigData in a Docker container
 To run your Oracle Database Docker image use the **docker run** command as follows:
 
 	docker run -d --name oggbd \
 	-p 9500:9500 \
 	oggbigdata:12.3.0.1.0
-	
+
 	Parameters:
 	   --name:        The name of the container (default: auto generated)
-	   -p:            The port mapping of the host port to the container port. 
-	                  Three ports are exposed: 
+	   -p:            The port mapping of the host port to the container port.
+	                  Three ports are exposed:
 	                  	- 9500 (OGG Manager Port (non-default))
 
 To access Oracle GoldenGate 12c, run the following from the command line:

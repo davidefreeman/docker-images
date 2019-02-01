@@ -32,4 +32,4 @@ RUN mkdir -p $OGG_HOME $STAGE_SOFTWARE
 ADD entrypoint.sh /
 ADD $OGG_SHIPHOME $STAGE_SOFTWARE
 EXPOSE $OGG_PORT
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
