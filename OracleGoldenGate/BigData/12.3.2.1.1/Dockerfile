@@ -15,7 +15,8 @@
 # (1) OGG_BigData_Linux_x64_12.3.2.1.1.zip (Oracle GoldenGate 12c for BigData (12.3.2.1.1)
 #     Download from http://www.oracle.com/technetwork/middleware/goldengate/downloads/index.html
 #
-FROM oraclelinux:7-slim
+ARG         BASE_IMAGE=oracle/instantclient:12.2.0.1
+FROM      ${BASE_IMAGE}
 MAINTAINER Bobby Curtis <bobby.curtis@oracle.com>
 #Container Additional Environment Variables
 ENV OGG_SHIPHOME=OGG_BigData_Linux_x64_12.3.2.1.1.zip \
@@ -25,7 +26,7 @@ ENV OGG_SHIPHOME=OGG_BigData_Linux_x64_12.3.2.1.1.zip \
 ENV PATH=$OGG_HOME:$PATH \
     LD_LIBRARY_PATH=/usr/lib/jvm/jre/lib/amd64/server:$OGG_HOME:$OGG_HOME/lib:$LD_LIBRARY_PATH
 #Command during the build
-RUN yum install -y java-1.8.0-openjdk util-linux zip unzip tar && yum clean all
+RUN yum install -y util-linux zip unzip tar && yum clean all
 #Create installation directories
 RUN mkdir -p $OGG_HOME $STAGE_SOFTWARE
 #Copy any artifacts to the image
