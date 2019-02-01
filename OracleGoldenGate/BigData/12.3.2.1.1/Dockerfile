@@ -4,22 +4,22 @@
 #
 # ORACLE GoldenGate DOCKERFILES PROJECT
 # -----------------------------------------
-# This is the DockerFile for Oracle GoldenGate for BigData 12.3.0.1.0
+# This is the DockerFile for Oracle GoldenGate for BigData 12.3.2.1.1
 #
 # IMPORTANT
 # -------------------------------------------
-# The resulting image of this Dockerfile would have Oracle Linux 7 and GoldenGate for BigData 12.3.0.1.0 installed in standalone mode.
+# The resulting image of this Dockerfile would have Oracle Linux 7 and GoldenGate for BigData 12.3.2.1.1 installed in standalone mode.
 #
 # REQUIRED FILES TO BUILD THIS IMAGE
 # ----------------------------------
-# (1) 123010_ggs_Adapters_Linux_x64.zip (Oracle GoldenGate 12c for BigData (12.3.0.1))
+# (1) OGG_BigData_Linux_x64_12.3.2.1.1.zip (Oracle GoldenGate 12c for BigData (12.3.2.1.1)
 #     Download from http://www.oracle.com/technetwork/middleware/goldengate/downloads/index.html
 #
 FROM oraclelinux:7-slim
 MAINTAINER Bobby Curtis <bobby.curtis@oracle.com>
 #Container Additional Environment Variables
-ENV OGG_SHIPHOME=123010_ggs_Adapters_Linux_x64.zip \
-    OGG_HOME=/u01/app/oracle/product/12.3.0.1.0/oggbd_1 \
+ENV OGG_SHIPHOME=OGG_BigData_Linux_x64_12.3.2.1.1.zip \
+    OGG_HOME=/u01/app/oracle/product/12.3.2.1.1/oggbd_1 \
     OGG_PORT=9500 \
     STAGE_SOFTWARE=/u01/software
 ENV PATH=$OGG_HOME:$PATH \
