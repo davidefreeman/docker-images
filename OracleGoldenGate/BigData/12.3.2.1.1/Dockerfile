@@ -24,7 +24,7 @@ ENV OGG_SHIPHOME=OGG_BigData_Linux_x64_12.3.2.1.1.zip \
     OGG_PORT=9500 \
     STAGE_SOFTWARE=/u01/software
 ENV PATH=$OGG_HOME:$PATH \
-    LD_LIBRARY_PATH=/usr/lib/jvm/jre/lib/amd64/server:$OGG_HOME:$OGG_HOME/lib:$LD_LIBRARY_PATH
+    LD_LIBRARY_PATH=$OGG_HOME:$OGG_HOME/lib:$LD_LIBRARY_PATH
 #Command during the build
 RUN yum install -y util-linux zip unzip tar && yum clean all
 #Create installation directories
